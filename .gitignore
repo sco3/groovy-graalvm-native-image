@@ -1,0 +1,4 @@
+out
+testsh.build_artifacts.txt
+*.class
+testsh
