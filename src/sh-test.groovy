@@ -1,14 +1,18 @@
 #!/usr/bin/env -S groovy
+import groovy.transform.CompileStatic
+
+import java.util.concurrent.TimeUnit
 
 import static java.lang.System.out
 
+@CompileStatic
 class TestSh {
 
     static Process runCommand(String s) {
         Process p = s.execute()
-        p.waitFor()
+        p.waitFor(4, TimeUnit.SECONDS)
         for (String line : p.getInputStream().readLines()) {
-            out.println("Execute: ${line}")
+            out.println("${line}")
         }
         return p
     }
