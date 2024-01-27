@@ -22,6 +22,3 @@ class TestSh {
         out.println("Execute: ${p}")
     }
 }
-
-TestSh test = new TestSh()
-test.main(new String[]{})
